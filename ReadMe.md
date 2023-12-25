@@ -26,7 +26,7 @@ You can run the tests with the following command:
 
 ### Run Tests on Samsung
 
-`npm run test:chrome`
+`npm run test:samsung`
 
 ## Steps to Create the Report
 
