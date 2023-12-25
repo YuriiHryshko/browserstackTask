@@ -1,27 +1,34 @@
-# Repo with test task for browserstack
+## Summary of Repo
 
-## Task
-1.  Clone repo and install all dependencies.
-2.  Upload app Android-NativeDemoApp to browserstack using API ([Link](https://www.browserstack.com/docs/app-automate/api-reference/appium/apps#upload-an-app)) and add unique ID to the ```wdio.conf.js```.
-3.  Create test 5 test cases (locators can be found using [Appium Inspector](https://github.com/appium/appium-inspector/releases) that conected to the Browserstack account).
-4.  Create workflow with using secrets (for user and key in capabilities)([description of secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)).
-5.  Create 2 config files (with different devices)
+This repository contains automated tests using the WebDriverIO and BrowserStack.
 
-## Tips
-1.  You can create multiple accounts in browserstack (demo trial - 100 minutes).
-2.  First of all find all necessary locators.
-3.  In the Appium Inspector at the header choose ```Select Cloud Providers -> Browserstack``` and into ```JSON Representation``` insert the next:
-```
-{
-  "appium:protocol": "https",
-  "appium:hostname": "hub.browserstack.com",
-  "appium:path": "/wd/hub",
-  "appium:maxInstances": 1,
-  "appium:app": "Your App ID is here",
-  "appium:os_version": "9.0",
-  "appium:deviceName": "Google Pixel 3",
-  "platformName": "Android",
-  "appium:autoAcceptAlerts": "true",
-  "appium:browserstack.appium_version": "1.22.0"
-}
-```
+## Requirements
+
+Before running the tests, you need to have the following software and dependencies installed:
+
+- Node.js
+- npm
+
+## Steps to Install
+
+1. Clone this repository to your local machine: `git clone https://github.com/YuriiHryshko/browserstackTask.git`
+2. Navigate to the project folder: `cd browserstackTask`
+3. Install the required dependencies: `npm install`
+4. Change name `.env.example` on `.env` and add variables
+
+## Steps to Run Tests
+
+You can run the tests with the following command:
+
+### Run Tests on Google Pixel
+
+`npm run test`
+
+### Run Tests on Samsung
+
+`npm run test:chrome`
+
+## Steps to Create the Report
+
+1. Generate the Allure report: `npm run report:generate`
+2. Open the generated Allure report in the browser: `npm run report:open`
